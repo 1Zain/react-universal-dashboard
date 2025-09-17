@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Dashboard</title>
+    <meta name="description" content="A modern, responsive dashboard application built with React, TypeScript, and Tailwind CSS" />
+    <meta name="author" content="Universal Dashboard" />
+    <meta name="keywords" content="dashboard, react, typescript, tailwind, admin, management" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Universal Dashboard" />
+    <meta property="og:description" content="A modern, responsive dashboard application built with React, TypeScript, and Tailwind CSS" />
+    <meta property="og:image" content="/placeholder.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Universal Dashboard" />
+    <meta name="twitter:description" content="A modern, responsive dashboard application built with React, TypeScript, and Tailwind CSS" />
+    <meta name="twitter:image" content="/placeholder.svg" />
+
+
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- Performance -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
+    
+    <!-- Prevent theme flickering -->
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      (function() {
+        const theme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <div id="root"></div>
+    
+    <!-- Loading fallback -->
+    <noscript>
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: system-ui, sans-serif;">
+        <div style="text-align: center;">
+          <h1>JavaScript Required</h1>
+          <p>This application requires JavaScript to run. Please enable JavaScript in your browser.</p>
+        </div>
+      </div>
+    </noscript>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
